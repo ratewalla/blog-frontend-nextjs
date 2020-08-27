@@ -2,11 +2,15 @@ import Layout from '../components/Layout';
 
 const About = () => {
     return (
-        <React.Fragment>
+        <>
             <Layout>
-                <h1 className="title is-1">Hello</h1>
+                <section>
+                    <div className="container is-fluid">
+                        <h1 className="title is-3">Hello this is the about page</h1>
+                    </div>
+                </section>
             </Layout>
-        </React.Fragment>
+        </>
     )
 };
 

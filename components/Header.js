@@ -1,6 +1,8 @@
-import {APP_NAME} from '../config';
+import { APP_NAME } from "../config";
+import Link from "next/link";
 
 const Header = () => {
+  // js responsive navbar
   if (process.browser) {
     document.addEventListener("DOMContentLoaded", () => {
       // Get all "navbar-burger" elements
@@ -28,15 +30,16 @@ const Header = () => {
   }
 
   return (
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <a class="navbar-item" href="/">
-          <h1 className="title is-3">{APP_NAME}</h1>
-        </a>
-
+    <nav className="navbar is-fixed-top is-transparent" role="navigation" aria-label="main navigation">
+      <div className="navbar-brand">
+        <Link href="/">
+          <a className="navbar-item">
+            <h1 className="title is-3">{APP_NAME}</h1>
+          </a>
+        </Link>
         <a
           role="button"
-          class="navbar-burger burger"
+          className="navbar-burger burger"
           aria-label="menu"
           aria-expanded="false"
           data-target="navbarBasicExample"
@@ -47,21 +50,27 @@ const Header = () => {
         </a>
       </div>
 
-      <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-start">
-          <a href="/" class="navbar-item">Home</a>
-
-          <a href="/about" class="navbar-item">About</a>
-
+      <div id="navbarBasicExample" className="navbar-menu">
+        <div className="navbar-start">
+          <Link href="/">
+            <a className="navbar-item">Home</a>
+          </Link>
+          <Link href="/about">
+            <a className="navbar-item">About</a>
+          </Link>
         </div>
 
-        <div class="navbar-end">
-          <div class="navbar-item">
-            <div class="buttons">
-              <a class="button is-primary">
-                <strong>Sign up</strong>
-              </a>
-              <a class="button is-light">Log in</a>
+        <div className="navbar-end">
+          <div className="navbar-item">
+            <div className="buttons">
+              <Link href="/signup">
+                <a className="button is-primary is-rounded">
+                  <strong>Sign up</strong>
+                </a>
+              </Link>
+              <Link href="/signin">
+                <a className="button is-light is-rounded">Log in</a>
+              </Link>
             </div>
           </div>
         </div>

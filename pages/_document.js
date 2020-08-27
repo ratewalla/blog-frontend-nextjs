@@ -8,7 +8,7 @@ class MyDocument extends Document {
         <Head>
             <meta charSet="UTF-8"/>
         </Head>
-        <body>
+        <body className="has-navbar-fixed-top">
           <Main />
           <NextScript />
         </body>

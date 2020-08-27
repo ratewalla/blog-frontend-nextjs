@@ -1,0 +1,12 @@
+.navbar{
+    transition: all 0.5s;
+}
+
+section{
+    padding-top: 5rem;
+    height: 100vh;
+}
+
+.signup-form{
+    text-align: center;
+}

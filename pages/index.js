@@ -2,11 +2,11 @@ import Layout from '../components/Layout';
 
 const Index = () => {
     return (
-        <React.Fragment>
+        <>
             <Layout>
-                <h1 className="title is-1">Hello</h1>
+                <h1 className="title is-1">Hello this is the home page</h1>
             </Layout>
-        </React.Fragment>
+        </>
     )
 };
 
