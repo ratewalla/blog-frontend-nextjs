@@ -1,5 +1,7 @@
 import { APP_NAME } from "../config";
 import Link from "next/link";
+import {signout, isAuth} from '../actions/auth';
+import Router from 'next/router';
 
 const Header = () => {
   // js responsive navbar
@@ -63,14 +65,26 @@ const Header = () => {
         <div className="navbar-end">
           <div className="navbar-item">
             <div className="buttons">
-              <Link href="/signup">
-                <a className="button is-primary is-rounded">
-                  <strong>Sign up</strong>
-                </a>
-              </Link>
-              <Link href="/signin">
-                <a className="button is-light is-rounded">Log in</a>
-              </Link>
+
+              {isAuth() && (
+                <>
+                  <Link href="#">
+                    <a onClick={()=>signout(() => Router.replace('/signin'))} className="button is-light is-rounded">Sign out</a>
+                  </Link>
+                </>
+              )}
+              {!isAuth() && (
+                <>
+                <Link href="/signup">
+                  <a className="button is-primary is-rounded">
+                    <strong>Sign up</strong>
+                  </a>
+                </Link>
+                <Link href="/signin">
+                  <a className="button is-light is-rounded">Log in</a>
+                </Link>
+                </>
+              )}
             </div>
           </div>
         </div>
