@@ -86,7 +86,7 @@ export const getCookie = key => {
 
 
 // set and remove cookies from local storage
-// set cookie in local storage and converts to json
+// set cookie in local storage and json to string
 export const setLocalStorage = (key, value) => {
     if(process.browser){
         localStorage.setItem(key, JSON.stringify(value));
