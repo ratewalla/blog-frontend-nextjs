@@ -18,7 +18,7 @@ const SigninComponent = () => {
 
     
     useEffect(() => {
-      isAuth() && Router.push(`/`)
+      isAuth() && Router.push('/')
     }, [])
 
   const handleSubmit = (e) => {
@@ -35,7 +35,13 @@ const SigninComponent = () => {
         } else {
           // calls authenticate method and passes data and callback function
           authenticate(data, () => {
-            Router.push(`/`)
+            // if user logs in as user, they are redirected to user homepage
+            if(isAuth() && isAuth().role === 'user'){
+              Router.push('user')
+              // if user logs in as admin they are redirected to the admin homepage
+            } else if(isAuth() && isAuth().role === 'admin'){
+              Router.push('admin')
+            }
           })
         }
     })

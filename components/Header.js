@@ -68,6 +68,9 @@ const Header = () => {
 
               {isAuth() && (
                 <>
+                <Link href={`${isAuth().role}`}>
+                  <button className="button is-white is-rounded mr-3">{isAuth().name} <i class="ml-3 fas fa-user"></i></button>
+                </Link>
                   <Link href="#">
                     <a onClick={()=>signout(() => Router.replace('/signin'))} className="button is-light is-rounded">Sign out</a>
                   </Link>
