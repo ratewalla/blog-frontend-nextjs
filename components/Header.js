@@ -2,6 +2,13 @@ import { APP_NAME } from "../config";
 import Link from "next/link";
 import {signout, isAuth} from '../actions/auth';
 import Router from 'next/router';
+// Progress bar
+import nProgress from 'nprogress';
+// Progress bar loads on route start, complete, and error
+Router.onRouteChangeStart = url => nProgress.start();
+Router.onRouteChangeComplete = url => nProgress.done();
+Router.onRouteChangeError = url => nProgress.done();
+
 
 const Header = () => {
   // js responsive navbar

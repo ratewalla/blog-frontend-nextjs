@@ -10,3 +10,9 @@ section{
 .signup-form{
     text-align: center;
 }
+
+/* progress bar */
+
+#nprogress .bar{
+    height: 4px !important;
+}
